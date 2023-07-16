@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/list_activity_info_fragment"
-        android:name="com.better.alarm.presenter.InfoFragment"
+        android:name="com.better.codingAlarm.presenter.InfoFragment"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         tools:layout="@layout/info_fragment" />
