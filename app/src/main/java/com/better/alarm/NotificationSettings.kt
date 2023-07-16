@@ -14,6 +14,7 @@ import android.provider.Settings
 import androidx.core.app.NotificationManagerCompat
 import com.better.alarm.configuration.globalLogger
 import com.better.alarm.logger.Logger
+import com.better.codingAlarm.R
 
 object NotificationSettings {
   val logger: Logger by globalLogger("NotificationSettings")
