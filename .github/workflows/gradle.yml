@@ -84,7 +84,7 @@ jobs:
         continue-on-error: true
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON_PLAIN_TEXT }}
-          packageName: com.better.alarm
+          packageName: com.better.codingAlarm
           releaseFiles: app/build/outputs/bundle/developRelease/app-develop-release.aab
           track: internal
           inAppUpdatePriority: 2
