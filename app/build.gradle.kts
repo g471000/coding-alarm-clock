@@ -83,15 +83,15 @@ android {
     defaultConfig {
         versionCode = 31404
         versionName = "3.14.04"
-        applicationId = "com.better.alarm"
+        applicationId = "com.better.codingAlarm"
         minSdk = 16
         targetSdk = 33
-        testApplicationId = "com.better.alarm.test"
+        testApplicationId = "com.better.codingAlarm.test"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
     }
-    namespace = "com.better.alarm"
-    testNamespace = "com.better.alarm.debug"
+    namespace = "com.better.codingAlarm"
+    testNamespace = "com.better.codingAlarm.debug"
     signingConfigs {
         create("release") {
             storeFile = file("upload-keystore.jks")
@@ -118,7 +118,7 @@ android {
     flavorDimensions.add("default")
 
     productFlavors {
-        create("develop") { applicationId = "com.better.alarm" }
+        create("develop") { applicationId = "com.better.codingAlarm" }
         create("premium") { applicationId = "com.premium.alarm" }
     }
 
