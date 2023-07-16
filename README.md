@@ -3,7 +3,7 @@
 ![](media/dev_alarm_screen.png)
 
 # Developer Alarm Clock
-Developer Alarm Clock is an alarm clock application for Android smartphones and tablets that has evolved from the Simple Alarm Clock repository. It is designed to cater to developers by offering a wide range of coding-related questions from Java, SQL, and other domains. To turn off the alarm, users must solve the presented coding problems. With Developer Alarm Clock, waking up becomes an opportunity to exercise coding skills and start the day with a mental challenge.
+Developer Alarm Clock is an alarm clock application for Android smartphones and tablets that has evolved from the Simple Alarm Clock repository. It is designed to cater to developers by offering a wide range of coding-related questions from Java, SQL, Python, Coding Interview Questions, and more. To turn off the alarm, users must solve the presented coding problems. With Developer Alarm Clock, waking up becomes an opportunity to exercise coding skills and start the day with a mental challenge.
 
 # Features
 * Low volume gentle alarm: The alarm starts with a low volume sound that gradually increases, ensuring a peaceful awakening during the optimal sleep phase.
@@ -12,6 +12,8 @@ Developer Alarm Clock is an alarm clock application for Android smartphones and 
 * Snooze options: Users can choose to snooze the alarm for a predefined duration with a single click or set a custom snooze time using the convenient time picker.
 * Dismiss with long press: To prevent accidental alarm dismissal, users can dismiss the alarm by performing a long press gesture.
 * Adjustable snooze time: Long pressing the snooze button opens a time picker, allowing users to set a personalized snooze duration.
+* Coding challenges: Developer Alarm Clock supports coding challenges from various domains including Java, SQL, Python, Coding Interview Questions, and more.
+* All-in-one option: Users can choose to have coding challenges from all supported domains, providing a diverse range of coding problems.
 
 # Open source
 The application's source code is derived from the Android Open Source Project (AOSP) and is available as an open-source project. We welcome feature requests and bug reports from the developer community. Please feel free to submit your suggestions by sending an email to the developers.
@@ -20,4 +22,3 @@ The repository has been forked to create the Developer Alarm Clock, which focuse
 
 # License
 Apache 2.0
-
