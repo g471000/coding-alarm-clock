@@ -154,9 +154,6 @@ class ActionBarHandler(
               mContext.startActivity(Intent(Intent.ACTION_VIEW, fallback))
             }
           }
-
-          findViewById<TextView>(R.id.dialog_say_thanks_text_as_button_donate_premium)
-              .movementMethod = LinkMovementMethod.getInstance()
         }
 
     AlertDialog.Builder(mContext)
