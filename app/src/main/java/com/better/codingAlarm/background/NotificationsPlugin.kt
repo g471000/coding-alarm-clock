@@ -74,14 +74,6 @@ class NotificationsPlugin(
           // when he will click on the Notification Bar.
           setContentIntent(pendingNotify)
           setOngoing(true)
-          addAction(
-              R.drawable.ic_action_snooze,
-              getString(R.string.alarm_alert_snooze_text),
-              pendingSnooze)
-          addAction(
-              R.drawable.ic_action_dismiss,
-              getString(R.string.alarm_alert_dismiss_text),
-              pendingDismiss)
           setDefaults(Notification.DEFAULT_LIGHTS)
           setSound(null)
           setVibrate(longArrayOf(0))
