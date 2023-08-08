@@ -68,11 +68,6 @@ class ActionBarHandler(
               "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
         }
 
-    val menuItem = menu.findItem(R.id.menu_share)
-    val sp =
-        MenuItemCompat.getActionProvider(menuItem) as androidx.appcompat.widget.ShareActionProvider
-    sp.setShareIntent(intent)
-
     sub =
         store.editing().subscribe { edited ->
           val showDelete = edited.isEdited && !edited.isNew
@@ -154,9 +149,6 @@ class ActionBarHandler(
               mContext.startActivity(Intent(Intent.ACTION_VIEW, fallback))
             }
           }
-
-          findViewById<TextView>(R.id.dialog_say_thanks_text_as_button_donate_premium)
-              .movementMethod = LinkMovementMethod.getInstance()
         }
 
     AlertDialog.Builder(mContext)

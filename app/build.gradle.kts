@@ -119,7 +119,6 @@ android {
 
     productFlavors {
         create("develop") { applicationId = "com.better.codingAlarm" }
-        create("premium") { applicationId = "com.premium.alarm" }
     }
 
     installation {

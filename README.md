@@ -10,9 +10,6 @@ Developer Alarm Clock is an alarm clock application for Android smartphones and 
 * Low volume gentle alarm: The alarm starts with a low volume sound that gradually increases, ensuring a peaceful awakening during the optimal sleep phase.
 * Advanced time picker: The time selection interface is inspired by the Jelly Bean style, providing a user-friendly phone-style keyboard for effortless time input.
 * Volume fade-in and vibration: The alarm sound gradually fades in, accompanied by optional vibration, offering a smooth and non-disruptive wake-up experience.
-* Snooze options: Users can choose to snooze the alarm for a predefined duration with a single click or set a custom snooze time using the convenient time picker.
-* Dismiss with long press: To prevent accidental alarm dismissal, users can dismiss the alarm by performing a long press gesture.
-* Adjustable snooze time: Long pressing the snooze button opens a time picker, allowing users to set a personalized snooze duration.
 * Coding challenges: Developer Alarm Clock supports coding challenges from various domains including Java, SQL, Python, Coding Interview Questions, and more.
 * All-in-one option: Users can choose to have coding challenges from all supported domains, providing a diverse range of coding problems.
 

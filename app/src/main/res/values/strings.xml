@@ -163,23 +163,18 @@
     <string name="details_no_ringtone_picker">No Ringtone provider found…</string>
     <string name="permissions_external_storage_text">It seems that we cannot play %s, probably because a permission is required. If you want, you can grant the permission. Alternatively, select a different sound. This decision can be changed in System Settings.</string>
     <string name="menu_about_title">About</string>
-    <string name="dialog_about_content">Simple Alarm Clock makes setting an alarm simple.
+    <string name="dialog_about_content">Developer Alarm Clock makes setting an alarm simple but fun.
 
-       It is an open source project maintained by software professionals in their free time.
+        This alarm has a unique twist! Unlike regular alarms, you can only snooze this alarm by solving a coding problem.
+        When the alarm goes off in the morning, you\'ll face a coding challenge to test your skills.
 
-       \n\nTips:
-       \n· You can change the appearance by pulling up customization drawer
+        This not only wakes you up but also activates your brain and gives you an opportunity to improve your coding abilities.
 
-       \n\nNew in this version:
-       \n· Customization drawer
-       \n· New color themes
-       \n· Some internal rework
-       \n· Minor bugfixes
+        \n· <a href="https://github.com/g471000/coding-alarm-clock">Our Source Code GitHub</a>
+        \n· <a href="https://github.com/yuriykulikov/AlarmClock">Original Source Code GitHub by yuriykulikov</a>
 
-       \n· <a href="https://github.com/yuriykulikov/AlarmClock">Learn more on GitHub</a>
+        Special thanks to yuriykulikov for the amazing project!
 
-       \n\nIf you wish to support us:
-       \n· <a href="https://play.google.com/store/apps/details?id=com.premium.alarm">Install our premium version!</a>
    </string>
     <string name="dialog_bugreport_faq"><b>Common issues and how to fix them</b>
        \n\n<font color="#FF0000">If there is no sound</font>, please check your device sound settings, and make sure alarms are enabled in "Do not disturb" mode.
@@ -189,9 +184,7 @@
        \n\n<font color="#FF0000">If nothing from helps</font>, please write us a message in the field below. We will do our best to try to help you.
    </string>
     <string name="dialog_say_thanks_title">Say thanks</string>
-    <string name="dialog_say_thanks_review_message">Thanks a lot for taking your time to say thanks! “Simple Alarm Clock” is an open source non-profit project. We will never use ads or gather user data to earn money. However, we are extremely happy if you like our work. One of the best ways to say thanks is to write a positive review. You can also ask a question or leave your feature request.</string>
-    <string name="dialog_say_thanks_premium_text">If you like the app, please consider upgrading to the premium version. This will help us a lot!</string>
-    <string name="dialog_say_thanks_premium_text_as_button"><a href="https://play.google.com/store/apps/details?id=com.premium.alarm">Install premium version</a></string>
+    <string name="dialog_say_thanks_review_message">Thanks a lot for taking your time to say thanks! “Developer Alarm Clock” is forked from an open source non-profit project, "Coding Alarm Clock". We will never use ads or gather user data to earn money. However, we are extremely happy if you like our work. One of the best ways to say thanks is to write a positive review. You can also ask a question or leave your feature request.</string>
 
     <string name="notification_channel_high_prio">Big popup with snooze and dismiss buttons</string>
     <string name="notification_channel_default_prio">Notification for a snoozed alarm</string>
