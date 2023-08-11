@@ -25,8 +25,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.CheckBox
 import android.widget.LinearLayout
+import android.widget.NumberPicker
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -42,6 +45,7 @@ import com.better.codingAlarm.lollipop
 import com.better.codingAlarm.model.AlarmValue
 import com.better.codingAlarm.model.Alarmtone
 import com.better.codingAlarm.model.ringtoneManagerString
+import com.better.codingAlarm.question.QuestionType
 import com.better.codingAlarm.util.Optional
 import com.better.codingAlarm.util.modify
 import com.better.codingAlarm.view.showRepeatAndDateDialog
@@ -53,9 +57,7 @@ import io.reactivex.disposables.Disposables
 import io.reactivex.schedulers.Schedulers
 import java.text.SimpleDateFormat
 import java.util.*
-import android.widget.AdapterView
-import android.widget.Spinner
-import com.better.codingAlarm.question.QuestionType
+
 
 /** Details activity allowing for fine-grained alarm modification */
 class AlarmDetailsFragment : Fragment() {
@@ -222,8 +224,16 @@ class AlarmDetailsFragment : Fragment() {
 
     private fun onCreateQuestionSelectView() {
         val mQuestionTypeSpinner by lazy {
-            fragmentView.findViewById(R.id.details_prealarm_dropdown) as Spinner
+            fragmentView.findViewById(R.id.question_type_dropdown) as Spinner
         }
+
+        val mQuestionNumberPicker by lazy {
+            fragmentView.findViewById(R.id.question_count_picker) as NumberPicker
+        }
+        mQuestionNumberPicker.minValue = 1 // 최소 값 설정
+        mQuestionNumberPicker.maxValue = 5 // 최대 값 설정
+        mQuestionNumberPicker.value = 1 // 초기 값을 설정
+
 
         mQuestionTypeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
