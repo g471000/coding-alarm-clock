@@ -171,6 +171,7 @@
                     android:id="@+id/question_type_dropdown"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:gravity="right"
                     android:entries="@array/question_types"
                     android:prompt="@string/question_type_prompt"
                     android:spinnerMode="dropdown" />

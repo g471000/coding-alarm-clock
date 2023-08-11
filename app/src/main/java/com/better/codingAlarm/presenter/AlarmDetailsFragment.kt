@@ -232,7 +232,7 @@ class AlarmDetailsFragment : Fragment() {
         }
         mQuestionNumberPicker.minValue = 1 // 최소 값 설정
         mQuestionNumberPicker.maxValue = 5 // 최대 값 설정
-        mQuestionNumberPicker.value = 1 // 초기 값을 설정
+        mQuestionNumberPicker.value = 1 // 초기 값 설정
 
 
         mQuestionTypeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -258,6 +258,12 @@ class AlarmDetailsFragment : Fragment() {
                 ) {value -> value.copy(questionType = selectedQuestionType)}
             }
 
+        }
+
+        mQuestionNumberPicker.setOnValueChangedListener { _, _, newCount ->
+            modify("Question Count") { value ->
+                value.copy(questionCount = newCount) // 데이터 수정
+            }
         }
     }
 
@@ -397,18 +403,18 @@ class AlarmDetailsFragment : Fragment() {
 
         logger.debug { "Got ringtone: $alert" }
 
-        val alarmtone =
+        val alarmTone =
             when (alert) {
                 null -> Alarmtone.Silent
                 RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM).toString() -> Alarmtone.Default
                 else -> Alarmtone.Sound(alert)
             }
 
-        logger.debug { "onActivityResult $alert -> $alarmtone" }
+        logger.debug { "onActivityResult $alert -> $alarmTone" }
 
-        checkPermissions(requireActivity(), listOf(alarmtone))
+        checkPermissions(requireActivity(), listOf(alarmTone))
 
-        modify("Ringtone picker") { prev -> prev.copy(alarmtone = alarmtone, isEnabled = true) }
+        modify("Ringtone picker") { prev -> prev.copy(alarmtone = alarmTone, isEnabled = true) }
     }
 
     fun Ringtone?.title(): CharSequence {

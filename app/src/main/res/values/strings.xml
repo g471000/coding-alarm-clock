@@ -28,9 +28,9 @@
     <!-- Setting labels on Set alarm screen: Prealarm -->
     <string name="alarm_prealarm">Gentle pre-alarm</string>
 
-    <string name="alarm_question_type">Alarm Question Type</string>
+    <string name="alarm_question_type">Question Type</string>
 
-    <string name="alarm_question_count">Number of Alarm Questions</string>
+    <string name="alarm_question_count">Question Count</string>
 
     <string-array name="question_types">
         <item>ALL</item>
