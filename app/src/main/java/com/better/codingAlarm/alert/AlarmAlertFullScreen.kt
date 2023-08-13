@@ -21,9 +21,12 @@ import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import com.better.codingAlarm.R
 import com.better.codingAlarm.background.Event.Autosilenced
@@ -162,85 +165,56 @@ class AlarmAlertFullScreen : FragmentActivity() {
         setButtonBehavior(R.id.alert_button_four, 3)
     }
 
-    private fun setButtonBehavior(buttonId: Int, correctAnswerIndex: Int) {
-        findViewById<Button>(buttonId).run {
-            requestFocus()
-            setOnClickListener {
-                val questionCount = mAlarm?.data!!.questionCount
-                println("TEST -> Question count: $questionCount")
-                println("TEST -> Correct Answer: ${question?.correctAnswer}")
-                if (question?.correctAnswer == correctAnswerIndex) {
-                    println("TEST -> Selected Answer: $correctAnswerIndex")
-                    correctAnswerCount++
-                    println("TEST -> Now correct answer count is... $correctAnswerCount")
 
-                    if (mAlarm?.data!!.questionCount == correctAnswerCount){
-                        mAlarm?.dismiss()
-                    }
-                } else {
-                    println("TEST -> Selected Answer: $correctAnswerIndex")
-                    println("TEST -> Correct Answer: ${question?.correctAnswer}")
+    private fun setButtonBehavior(buttonId: Int, answerIndex: Int) {
+        val button = findViewById<Button>(buttonId)
+        val questionCount = mAlarm?.data!!.questionCount
+
+        val defaultButtonBackground = button.background // Store the default button background
+
+        button.setOnClickListener {
+            val isCorrect = question?.correctAnswer == answerIndex
+
+            if (isCorrect) {
+                correctAnswerCount++
+
+                if (questionCount == correctAnswerCount) {
+                    mAlarm?.dismiss()
                 }
+            }
+
+            button.setBackgroundResource(if (isCorrect) R.drawable.button_correct_background else R.drawable.button_incorrect_background)
+            button.setTextColor(ContextCompat.getColor(this, R.color.white))
+
+            // Highlight the correct answer button if the selected answer is incorrect
+            val correctButtonId = when (question?.correctAnswer) {
+                0 -> R.id.alert_button_one
+                1 -> R.id.alert_button_two
+                2 -> R.id.alert_button_three
+                3 -> R.id.alert_button_four
+                else -> -1
+            }
+
+            val correctButton = findViewById<Button>(correctButtonId)
+            correctButton.setBackgroundResource(R.drawable.button_correct_background)
+
+            // 텍스트 설정 및 1초 후에 다음 문제로 넘어가기
+            button.isEnabled = false
+            Handler(Looper.getMainLooper()).postDelayed({
+                // Question 다시 뽑아서 세팅
                 question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
                 setQuestion()
-            }
+
+                // 버튼 색 다시 default로 조정
+                button.background = defaultButtonBackground // Reset button background
+                correctButton.background = defaultButtonBackground // Reset correct answer button background
+                button.setTextColor(ContextCompat.getColor(this, R.color.dark_on_background))
+                correctButton.setTextColor(ContextCompat.getColor(this, R.color.dark_on_background))
+                button.isEnabled = true
+            }, 2000)
         }
     }
 
-
-//    private fun updateLayout() {
-//        setContentView(R.layout.alert_fullscreen)
-//        setQuestion()
-//
-//        findViewById<Button>(R.id.alert_button_one).run {
-//            requestFocus()
-//            setOnClickListener {
-//                if (question?.correctAnswer == 0) {
-//                    println("correct!!")
-//                    mAlarm?.dismiss()
-//                } else {
-//                    question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-//                    setQuestion()
-//                }
-//            }
-//        }
-//
-//        findViewById<Button>(R.id.alert_button_two).run {
-//            requestFocus()
-//            setOnClickListener {
-//                if (question?.correctAnswer == 1) {
-//                    mAlarm?.dismiss()
-//                } else {
-//                    question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-//                    setQuestion()
-//                }
-//            }
-//        }
-//
-//        findViewById<Button>(R.id.alert_button_three).run {
-//            requestFocus()
-//            setOnClickListener {
-//                if (question?.correctAnswer == 2) {
-//                    mAlarm?.dismiss()
-//                } else {
-//                    question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-//                    setQuestion()
-//                }
-//            }
-//        }
-//
-//        findViewById<Button>(R.id.alert_button_four).run {
-//            requestFocus()
-//            setOnClickListener {
-//                if (question?.correctAnswer == 3) {
-//                    mAlarm?.dismiss()
-//                } else {
-//                    question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-//                    setQuestion()
-//                }
-//            }
-//        }
-//    }
 
     /**
      * Shows a time picker to pick the next snooze time. Mutes the sound for the first 10 seconds to
