@@ -165,8 +165,6 @@ class AlarmAlertFullScreen : FragmentActivity() {
         setButtonBehavior(R.id.alert_button_four, 3)
     }
 
-//
-
 
     private fun setButtonBehavior(buttonId: Int, answerIndex: Int) {
         val button = findViewById<Button>(buttonId)
@@ -217,86 +215,6 @@ class AlarmAlertFullScreen : FragmentActivity() {
         }
     }
 
-
-    private fun setButtonBehavior2(buttonId: Int, correctAnswerIndex: Int) {
-        findViewById<Button>(buttonId).run {
-            requestFocus()
-            setOnClickListener {
-                val questionCount = mAlarm?.data!!.questionCount
-                println("TEST -> Question count: $questionCount")
-                println("TEST -> Correct Answer: ${question?.correctAnswer}")
-                if (question?.correctAnswer == correctAnswerIndex) {
-                    println("TEST -> Selected Answer: $correctAnswerIndex")
-                    correctAnswerCount++
-                    println("TEST -> Now correct answer count is... $correctAnswerCount")
-
-                    if (mAlarm?.data!!.questionCount == correctAnswerCount) {
-                        mAlarm?.dismiss()
-                    }
-                } else {
-                    println("TEST -> Selected Answer: $correctAnswerIndex")
-                    println("TEST -> Correct Answer: ${question?.correctAnswer}")
-                }
-                question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-                setQuestion()
-            }
-        }
-    }
-
-
-//    private fun updateLayout() {
-//        setContentView(R.layout.alert_fullscreen)
-//        setQuestion()
-//
-//        findViewById<Button>(R.id.alert_button_one).run {
-//            requestFocus()
-//            setOnClickListener {
-//                if (question?.correctAnswer == 0) {
-//                    println("correct!!")
-//                    mAlarm?.dismiss()
-//                } else {
-//                    question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-//                    setQuestion()
-//                }
-//            }
-//        }
-//
-//        findViewById<Button>(R.id.alert_button_two).run {
-//            requestFocus()
-//            setOnClickListener {
-//                if (question?.correctAnswer == 1) {
-//                    mAlarm?.dismiss()
-//                } else {
-//                    question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-//                    setQuestion()
-//                }
-//            }
-//        }
-//
-//        findViewById<Button>(R.id.alert_button_three).run {
-//            requestFocus()
-//            setOnClickListener {
-//                if (question?.correctAnswer == 2) {
-//                    mAlarm?.dismiss()
-//                } else {
-//                    question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-//                    setQuestion()
-//                }
-//            }
-//        }
-//
-//        findViewById<Button>(R.id.alert_button_four).run {
-//            requestFocus()
-//            setOnClickListener {
-//                if (question?.correctAnswer == 3) {
-//                    mAlarm?.dismiss()
-//                } else {
-//                    question = QuestionList().getRandomQuestion(mAlarm?.data!!.questionType)
-//                    setQuestion()
-//                }
-//            }
-//        }
-//    }
 
     /**
      * Shows a time picker to pick the next snooze time. Mutes the sound for the first 10 seconds to

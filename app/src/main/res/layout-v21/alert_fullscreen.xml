@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:text="5"
                     android:textSize="30sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -111,10 +111,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
-        android:text="One"
-        android:textColor="@color/dark_on_background"
         android:background="@color/blackish"
-        android:textAllCaps="false" />
+        android:text="One"
+        android:textAllCaps="false"
+        android:textColor="@color/dark_on_background" />
 
     <Button
         android:id="@+id/alert_button_two"
@@ -125,10 +125,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
-        android:text="Two"
-        android:textColor="@color/dark_on_background"
         android:background="@color/blackish"
-        android:textAllCaps="false" />
+        android:text="Two"
+        android:textAllCaps="false"
+        android:textColor="@color/dark_on_background" />
 
     <Button
         android:id="@+id/alert_button_three"
@@ -139,10 +139,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
-        android:text="Three"
-        android:textColor="@color/dark_on_background"
         android:background="@color/blackish"
-        android:textAllCaps="false" />
+        android:text="Three"
+        android:textAllCaps="false"
+        android:textColor="@color/dark_on_background" />
 
     <Button
         android:id="@+id/alert_button_four"
@@ -153,10 +153,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
-        android:text="Four"
-        android:textColor="@color/dark_on_background"
         android:background="@color/blackish"
-        android:textAllCaps="false" />
+        android:text="Four"
+        android:textAllCaps="false"
+        android:textColor="@color/dark_on_background" />
 
     <View
         android:layout_width="match_parent"
@@ -164,7 +164,6 @@
         android:layout_marginLeft="16dip"
         android:layout_marginRight="16dip"
         android:background="?android:attr/dividerHorizontal" />
-
 
 
 </LinearLayout>
