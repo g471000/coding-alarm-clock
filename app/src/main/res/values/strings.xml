@@ -28,8 +28,9 @@
     <!-- Setting labels on Set alarm screen: Prealarm -->
     <string name="alarm_prealarm">Gentle pre-alarm</string>
 
-    <!-- Setting labels on Set alarm screen: Prealarm -->
-    <string name="alarm_question_type">Alarm Question Type</string>
+    <string name="alarm_question_type">Question Type</string>
+
+    <string name="alarm_question_count">Question Count</string>
 
     <string-array name="question_types">
         <item>ALL</item>
@@ -39,7 +40,17 @@
         <item>CODING_INTERVIEW</item>
     </string-array>
 
+    <string-array name="number_of_questions">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
     <string name="question_type_prompt">Select Question Type</string>
+
+    <string name="alarm_question_count_prompt">Select Number of Questions</string>
 
     <!-- Pre-alarm duration title -->
     <string name="prealarm_duration_title" tools:ignore="MissingTranslation">Pre-alarm duration</string>

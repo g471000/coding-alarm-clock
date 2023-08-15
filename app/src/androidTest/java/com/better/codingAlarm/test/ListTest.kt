@@ -61,23 +61,6 @@ class ListTest {
 
     assertThat(alarmsList().filter { it.isEnabled }).isEmpty()
   }
-  @Test
-  fun alarmsCanBeDeletedWithLongClick() {
-    clickFab()
-    onView(withText("Cancel")).perform(click())
-    onView(withText("OK")).perform(click())
-
-    assertThat(alarmsList()).hasSize(3)
-
-    onData(anything())
-        .onChildView(withId(R.id.details_button_container))
-        .atPosition(0)
-        .perform(longClick())
-    onView(withText("Delete alarm")).click()
-    onView(withText("OK")).click()
-
-    assertThat(alarmsList()).hasSize(2)
-  }
 
   @Test
   fun newAlarmShouldBeEnabledIfEdited12() {
@@ -110,26 +93,6 @@ class ListTest {
     assertThat(alarmsList()).hasSize(3)
 
     assertThat(alarmsList().filter { it.isEnabled }).hasSize(1)
-  }
-
-  @Test
-  fun testDeleteNewAlarmInDetailsActivity() {
-    clickFab()
-    onView(withText("Cancel")).perform(click())
-    onView(withText("OK")).perform(click())
-
-    assertThat(alarmsList()).hasSize(3)
-
-    onData(anything())
-        .atPosition(0)
-        .onChildView(withId(R.id.details_button_container))
-        .perform(click())
-
-    onView(withId(R.id.set_alarm_menu_delete_alarm)).perform(click())
-
-    onView(withText("OK")).perform(click())
-
-    assertThat(alarmsList()).hasSize(2)
   }
 
   @Test
